@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieShowCase</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/hollywood">Hollywood</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/bollywood">Bollywood</a>
+            </li>
+          </ul>
+        </div>
+       </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="card" style="width: 70%; min-height: 400px;">
+            <div class="row h-100">
+              <div class="col-md-6">
+                <img src="<%= movie.image %>" class="card-img-top h-100 w-100" alt="movie Image" style="object-fit: cover;">
+              </div>
+              <div class="col">
+                <div class="card-body">
+                  <h5 class="card-title"><%= movie.name %></h5>
+                  <p class="card-text">Movie Director: <%= movie.director %> <br>
+                    Cast: <%= movie.cast %>
+                  </p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="/<%= movie._id%>/edit" class="btn btn-success">Edit</a>
+                    <a href="/<%= movie.region.toLowerCase()%>/<%= movie._id%>/delete" class="btn btn-danger">Delete</a>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+    </div>          
+</body>
+</html>
