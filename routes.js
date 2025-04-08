@@ -38,7 +38,7 @@ router.get('/newMovie', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const newMovie = new Movie(req.body.movie); // access nested 'movie'
+    const newMovie = new Movie(req.body.movie);
     await newMovie.save();
     console.log("Saved movie:", newMovie);
     res.redirect(`/${newMovie.region}/${newMovie._id}`);
