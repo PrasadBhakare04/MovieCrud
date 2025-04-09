@@ -8,5 +8,12 @@ const movieSchema = new mongoose.Schema({
     region : String
 })
 
+movieSchema.pre('save', function (next) {
+    if (this.region) {
+      this.region = this.region.toLowerCase();
+    }
+    next();
+});
+
 const Movie = new mongoose.model("Movie", movieSchema);
 module.exports = Movie;
